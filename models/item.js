@@ -3,7 +3,7 @@
 //==================
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-//const reviewSchema = require ('./review.js')
+const reviewSchema = require ('./review.js')
 
 //==================
 //   ITEM SCHEMA  
@@ -34,11 +34,7 @@ const itemSchema = new Schema(
             type: String,
             required: true,
         },
-        review: {
-            type: mongoose.ObjectId,
-            ref: 'Review',
-            required: true
-	},
+        reviews: [reviewSchema]
     }
 );
 
