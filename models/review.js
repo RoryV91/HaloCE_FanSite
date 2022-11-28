@@ -31,15 +31,8 @@ const reviewSchema = new Schema(
     }
 );
 
-//===============================
-//   MODEL USING REVIEW SCHEMA  
-//===============================
-
-const Review = mongoose.model('Review', reviewSchema);
-
 //===================
 //   EXPORT MODEL  
 //===================
 
-//module.exports = reviewSchema;
-module.exports = Review;
+module.exports = reviewSchema;

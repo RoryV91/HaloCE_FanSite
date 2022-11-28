@@ -17,8 +17,8 @@ router.get('/', (req, res) => {
 //=================================
 //   INDEX ROUTE FOR ONE BY NAME
 //=================================
-router.get('/:name', (req, res) => {
-	db.Item.findOne({'name': req.params.name}, (err, item) => {
+router.get('/:id', (req, res) => {
+	db.Item.findOne({'id': req.params.id}, (err, item) => {
 		res.json(item)
 	})
 });

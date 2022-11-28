@@ -8,9 +8,9 @@ const db = require('../models');
 //==================
 //   CREATE ROUTE
 //==================
-router.post('/', (req, res) => {
-    db.Item.findByIdAndUpdate(
-        req.body.itemId,
+router.post('/add/:name', (req, res) => {
+    db.Item.findOneAndUpdate(
+        { "name": req.params.name},
         { $push: { reviews: req.body } },
         { new: true },
         (err, item) => {
@@ -23,9 +23,9 @@ router.post('/', (req, res) => {
 //==========================================
 //   INDEX ROUTE: ALL REVIEWS FOR AN ITEM
 //==========================================
-router.get('/item/:id', (req, res) => {
-    db.Item.findById(
-        req.params.id,
+router.get('/item/:name', (req, res) => {
+    db.Item.findOne(
+        { "name" : req.params.name},
         { name: true, reviews: true, _id: false },
         (err, item) => {
             res.json(item)
@@ -36,9 +36,9 @@ router.get('/item/:id', (req, res) => {
 //========================================
 //   INDEX ROUTE: ALL REVIEWS BY A USER
 //========================================
-router.get('/user/:id', (req, res) => {
-    db.User.findById(
-        req.params.id,
+router.get('/user/:name', (req, res) => {
+    db.User.findOne(
+        {"name": req.params.name},
         (err, user) => {
             db.Item.find(
                 { 'reviews.reviewer': req.params.id },
@@ -60,9 +60,9 @@ router.get('/user/:id', (req, res) => {
 //==================
 //   UPDATE ROUTE
 //==================
-router.put('/:id', (req, res) => {
+router.put('/edit/:name', (req, res) => {
     db.Item.findOneAndUpdate(
-        { 'reviews._id': req.params.id },
+        { 'name': req.params.name, "reviews._id": req.body._id},
         {
             $set: {
                 'reviews.$.title': req.body.title,
@@ -70,7 +70,7 @@ router.put('/:id', (req, res) => {
             }
         },
         () => {
-            res.redirect(`/reviews/${req.params.id}`)
+            res.redirect(`/items/${req.params.name}`)
         }
     )
 })
@@ -78,12 +78,12 @@ router.put('/:id', (req, res) => {
 //==================
 //   DELETE ROUTE
 //==================
-router.delete('/:id', (req, res) => {
+router.delete('/:name', (req, res) => {
     db.Item.findOneAndUpdate(
-        { 'reviews._id': req.params.id },
+        { 'name': req.params.name },
         {
             $pull: {
-                reviews: { _id: req.params.id }
+                reviews: { _id: req.body._id }
             }
         },
         { new: true },
@@ -93,18 +93,6 @@ router.delete('/:id', (req, res) => {
     )
 })
 
-//==================
-//   INDEX ROUTE
-//==================
-router.get('/:id', (req, res) => {
-    db.Item.findOne(
-        { 'reviews._id': req.params.id },
-        { 'reviews.$': true, _id: false },
-        (err, review) => {
-            res.json(review.reviews[0])
-        }
-    )
-})
 
 //===================
 //   EXPORT ROUTES  

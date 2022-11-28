@@ -27,7 +27,7 @@ app.use('/items', itemsController);
 // User routes
 app.use('/users', usersController);
 // Review routes
-app.use('/reviews', reviewsController);
+app.use('/items/reviews', reviewsController);
 
 //===============
 // START SERVER
