@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include ('./partials/header.ejs') %>
+
+        <link rel="stylesheet" href="/styles/main.css">
+    
+    </head>
+
+<body>
+    <h1>Sign Up</h1>
+
+<form action="/users/signup" method="POST">
+  <label for="username">Username:</label><br>
+  <input type="text" id="uname" name="username" placeholder="enter username"><br>
+  <label for="password">Password:</label><br>
+  <input type="password" id="pword" name="password" placeholder="enter password"><br><br>
+  <input type="submit" value="Sign Up">
+</form> 
+</body>
+</html>

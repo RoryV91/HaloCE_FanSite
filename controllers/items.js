@@ -9,8 +9,9 @@ const db = require('../models');
 //   INDEX ROUTE FOR ALL
 //=========================
 router.get('/', (req, res) => {
-	db.Item.find({}, (err, items) => {
-		res.json(items)
+	db.Item.find({}, async (err, items) => {
+		const populatedItems = await db.Item.find({}).populate('reviews.reviewer')
+		res.render('items.ejs', {items: populatedItems, tabTitle: 'All Items'})
 	})
 });
 

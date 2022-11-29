@@ -1,9 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <%- include ('./partials/header.ejs') %>
+
+        <link rel="stylesheet" href="/styles/main.css">
+    
+    </head>
 
 <body>
+<div class="flex-container">
     <h1>Nade Jump</h1>
     <p>A Place to discuss items from Halo: Combat Evolved</p>
-    <button>ENTER</button>
+    <form action="/users/login" method="POST">
+        <label for="username">Username:</label><br>
+        <input type="text" id="uname" name="username" placeholder="Username"><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="pword" name="password" placeholder="password"><br><br>
+        <input type="submit" id="login-button" value="LOG IN">
+      </form>       
+    <p>Don't have an account? Sign up <a href="users/signup">here.</a></p>
+</div>
+ <% if (typeof loginResult == 'undefined'){
+
+ } else if (loginResult === "badPassword") { %>
+    <script>
+
+        alert("Password is incorrect!")
+    </script>
+<% } else if (loginResult === "noUser") { %>
+    <script>
+        alert("Username was not found!")
+        </script>
+<% } %>   
+</script>
+
 </body>
 </html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include ('./partials/header.ejs') %>
+
+        <link rel="stylesheet" href="/styles/main.css">
+    
+    </head>
+
+    <body>
+        <h1>Items Page</h1>
+        <div class="flex-container">
+        <ul>
+            <% items.forEach(details => { %>
+                <div class="itemCard">
+                <li class="itemList">
+                    <div class="itemList-img"><img src=<%= details.image %>></img><br></div>
+                    <div class="itemList-name"><%= details.name %><br></div>
+                    <div class="itemList-type"><%= details.type %><br></div>
+                    <div class="itemList-origin"><%= details.origin %><br></div>
+                    <div class="itemList-capacity"><%= details.capacity %><br></div>
+                    <div class="itemList-description"><%= details.description %><br></div>
+                </div>
+                    <p>Reviews:</p><br>
+                    <ul class="itemReviews">
+                        <% details.reviews.forEach(reviewContent => { %>
+                            <li class="aReview">
+                                <div class="reviewTitle"><%= reviewContent.title %></div>
+                                <div class="reviewText"><%= reviewContent.body %></div>
+                                <% console.log(reviewContent) %>
+                                <div class="reviewUser"><%= reviewContent.reviewer.name %></div>
+                            </li>
+                       <% }) %> 
+                    </ul>
+                </li>
+                <a href="#"><button id="addReview">Add Review</button></a><br>
+           <% }) %>
+           
+        </ul>
+    </div>
+    </body>
