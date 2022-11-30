@@ -78,8 +78,15 @@ Things I wanted to do that I couldnt accomplish on time are:
   Wireframes
 ==============
 
+![Home](https://user-images.githubusercontent.com/115426977/204744965-99aad710-4863-410a-bb88-b6fb72cb9d0f.png)
+![Items](https://user-images.githubusercontent.com/115426977/204744970-62275733-9c40-4f11-af73-7d1ed5916f18.png)
+![showItem](https://user-images.githubusercontent.com/115426977/204744973-ce295589-ce62-46ba-8f7c-f05146f99c70.png)
+![addReview](https://user-images.githubusercontent.com/115426977/204744958-9e2eef0f-e380-4cf1-ba2a-c1b55999552d.png)
+
 ============================
   Link to finished product
 ============================
+
+Please leave a review or a comment! 🤙
 
 https://halocefansite-production.up.railway.app/
