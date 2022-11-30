@@ -3,7 +3,6 @@
 //==================
 const mongoose = require("mongoose");
 const MONGODBURI = process.env.MONGODBURI
-
 require('dotenv').config()
 
 //=======================================

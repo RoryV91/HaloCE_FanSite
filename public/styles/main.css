@@ -113,6 +113,18 @@ ul {
     background: none;
     border: none;
 }
+#editButton:hover {
+    background-color:rgba(137, 43, 226, 0.687);
+    cursor: pointer;
+}
+#deleteButton:hover {
+    background-color:rgba(137, 43, 226, 0.687);
+    cursor: pointer;
+}
+#updateReview:hover {
+    background-color:rgba(137, 43, 226, 0.687);
+    cursor: pointer;
+}
 
 .itemCard {
     color: rgb(0, 213, 255);
