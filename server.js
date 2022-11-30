@@ -1,9 +1,11 @@
 //==================
 //  CONFIGURATION  
 //==================
+require('dotenv').config()
 const express = require('express');
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT;
+const MONGODBURI = process.env.MONGODBURI
 const db = require('./models')
 const usersController = require('./controllers/users.js');
 const itemsController = require('./controllers/items.js');
@@ -13,6 +15,7 @@ const methodOverride = require('method-override');
 //===============
 // MIDDLEWARE
 //===============
+
 
 app.use(express.static('public'))
 
@@ -40,6 +43,8 @@ app.use('/items', itemsController);
 app.use('/users', usersController);
 // Review routes
 app.use('/items/reviews', reviewsController);
+// 
+
 
 //===============
 // START SERVER

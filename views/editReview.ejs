@@ -6,3 +6,21 @@
         <link rel="stylesheet" href="/styles/main.css">
     
     </head>
+
+<body>
+    <div class="flex-container">
+    <h1>Edit Review</h1>
+    <h1><%=item_name%></h1>
+
+<form action="/items/reviews/update/<%=item_name%>" method="POST">
+  <label for="title">Title:</label><br>
+  <input type="hidden" name="reviewID" value="<%=reviewID%>">
+  <input type="text" id="reviewTitle" name="title" value="<%=currentTitle%>"><br>
+  <label for="body">Body:</label><br>
+  <input type="text" id="reviewBody" name="body" value="<%=currentBody%>"><br><br>
+  <input type="submit" id="updateReview" value="Update Review">
+  <!-- <input type="hidden" name="reviewer" value=""> -->
+</form> 
+</div>
+</body>
+</html>

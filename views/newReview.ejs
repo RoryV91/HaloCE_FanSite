@@ -6,3 +6,20 @@
         <link rel="stylesheet" href="/styles/main.css">
     
     </head>
+
+<body>
+    <div class="flex-container">
+    <h1>Add Review</h1>
+    <h1><%=item_name%></h1>
+
+<form action="/items/reviews/add/<%=item_name%>" method="POST">
+  <label for="title">Title:</label><br>
+  <input type="text" id="reviewTitle" name="title" placeholder="enter a title"><br>
+  <label for="body">Body:</label><br>
+  <input type="text" id="reviewBody" name="body" placeholder="Write review here"><br><br>
+  <input type="submit" id="postReview" value="Post Review">
+  <!-- <input type="hidden" name="reviewer" value=""> -->
+</form> 
+</div>
+</body>
+</html>

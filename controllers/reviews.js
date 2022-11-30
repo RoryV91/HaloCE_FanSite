@@ -5,6 +5,16 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models');
 
+//=================
+//    NEW ROUTE
+//=================
+
+router.get('/add/:name', (req, res) => {
+    
+    res.render('newReview.ejs', {tabTitle: "Add a Review", item_name: req.params.name})
+
+});
+
 //==================
 //   CREATE ROUTE
 //==================
@@ -13,15 +23,15 @@ router.post('/add/:name', (req, res) => {
         { "name": req.params.name},
         { $push: { reviews: req.body } },
         { new: true },
-        (err, item) => {
-            res.json(item)
+       async (err, item) => {
+            const populatedItems = await db.Item.find({})
+            //.populate('reviews.reviewer')
+        	res.redirect('/items')
+            res.render('items.ejs', {items: populatedItems, tabTitle: 'All Items'})
         }
     )
 })
 
-//=================
-//    NEW ROUTE
-//=================
 
 
 //==========================================
@@ -62,19 +72,31 @@ router.get('/user/:name', (req, res) => {
     )
 })
 //==================
+//   EDIT ROUTE
+//==================
+router.post('/edit/:name', (req, res) => {
+        
+            res.render('editReview.ejs', {tabTitle: "Edit Review", item_name: req.params.name, reviewID: req.body.reviewID, currentTitle: req.body.currentTitle, currentBody: req.body.currentBody })
+})
+
+//==================
 //   UPDATE ROUTE
 //==================
-router.put('/edit/:name', (req, res) => {
+router.post('/update/:name', (req, res) => {
     db.Item.findOneAndUpdate(
-        { 'name': req.params.name, "reviews._id": req.body._id},
+        { 'name': req.params.name, "reviews._id": req.body.reviewID},
         {
             $set: {
                 'reviews.$.title': req.body.title,
                 'reviews.$.body': req.body.body
             }
-        },
-        () => {
-            res.redirect(`/items/${req.params.name}`)
+        }, 
+        {new: true},
+        async (err, item) => {
+            const populatedItems = await db.Item.find({})
+            //.populate('reviews.reviewer')
+        	res.redirect('/items')
+            res.render('items.ejs', {items: populatedItems, tabTitle: 'All Items'})
         }
     )
 })
@@ -82,17 +104,20 @@ router.put('/edit/:name', (req, res) => {
 //==================
 //   DELETE ROUTE
 //==================
-router.delete('/:name', (req, res) => {
+router.post('/:name', (req, res) => {
     db.Item.findOneAndUpdate(
         { 'name': req.params.name },
         {
             $pull: {
-                reviews: { _id: req.body._id }
+                reviews: { _id: req.body.reviewID }
             }
         },
         { new: true },
-        (err, item) => {
-            res.json(item)
+        async (err, item) => {
+            const populatedItems = await db.Item.find({})
+            //.populate('reviews.reviewer')
+        	res.redirect('/items')
+            res.render('items.ejs', {items: populatedItems, tabTitle: 'All Items'})
         }
     )
 })

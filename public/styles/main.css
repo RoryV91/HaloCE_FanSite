@@ -1,5 +1,5 @@
 body {
-    background-image: url("/assets/img/backgrounds/background1.png");
+    background-image: url("/assets/img/backgrounds/background11.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;   
@@ -24,7 +24,21 @@ h1 {
     background-color:rgba(0, 41, 137, 0.614);
     border: 0.25vh solid rgb(0, 213, 255);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    padding: 5px;
+    width: 50vw;
+    margin: 0 auto;
+}
+
+h3 {
+    color: rgb(0, 213, 255);
+    background-color:rgba(0, 41, 137, 0.614);
+    border: 0.25vh solid rgb(0, 213, 255);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 80vw;
+    margin: 1vh auto;
+}
+
+h4 {
+    text-decoration: underline;
 }
 
 button {
@@ -35,6 +49,20 @@ button {
 }
 
 #login-button:hover {
+    background-color:rgba(137, 43, 226, 0.687);
+    cursor: pointer;
+}
+
+#sign-up:hover {
+    background-color:rgba(137, 43, 226, 0.687);
+    cursor: pointer;
+}
+
+#addReview {
+    margin: 1vh auto;
+}
+
+#addReview:hover {
     background-color:rgba(137, 43, 226, 0.687);
     cursor: pointer;
 }
@@ -80,6 +108,11 @@ ul {
     list-style: none;
     padding: 0;
 }
+#reviewButtons{
+    margin: 0.5vh auto;
+    background: none;
+    border: none;
+}
 
 .itemCard {
     color: rgb(0, 213, 255);
@@ -90,6 +123,42 @@ ul {
 }
 
 .itemCard img {
-    max-width: 100%;
+    max-width: 90%;
     object-fit: contain;
+    border: 0.25vh solid rgb(0, 213, 255);
+    margin: 3%;
+}
+
+.aReview {
+    color: rgb(0, 213, 255);
+    background-color:rgba(0, 41, 137, 0.614);
+    border: 0.25vh solid rgb(0, 213, 255);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 80vw;
+    padding: 1vh 0;
+    margin: 1vh;
+}
+.itemList {
+    padding: 1vh;
+}
+
+.itemList-name {
+    text-align: left;
+}
+.itemList-type {
+    text-align: left;
+}
+.itemList-origin {
+    text-align: left;
+}
+.itemList-capacity {
+    text-align: left;
+}
+.reviewMade {
+    text-align: left;
+    padding: 0 1vh;
+}
+.reviewUpdated {
+    text-align: left;
+    padding: 0 1vh;
 }

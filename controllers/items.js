@@ -10,7 +10,8 @@ const db = require('../models');
 //=========================
 router.get('/', (req, res) => {
 	db.Item.find({}, async (err, items) => {
-		const populatedItems = await db.Item.find({}).populate('reviews.reviewer')
+		const populatedItems = await db.Item.find({})
+		//.populate('reviews.reviewer')
 		res.render('items.ejs', {items: populatedItems, tabTitle: 'All Items'})
 	})
 });

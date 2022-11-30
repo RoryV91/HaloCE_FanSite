@@ -2,14 +2,17 @@
 //   DEPENDENCIES  
 //==================
 const mongoose = require("mongoose");
+const MONGODBURI = process.env.MONGODBURI
+
+require('dotenv').config()
 
 //=======================================
 //    CONNECT TO MONGODB VIA MONGOOSE
 //=======================================
 
-const connectionString = "mongodb://localhost:27017/nade-jump"
+const connectionString = MONGODBURI
 mongoose.connect(
-    connectionString,
+    "mongodb+srv://admin:mongo@cluster0.se5qhkr.mongodb.net/?retryWrites=true&w=majority",
     { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
