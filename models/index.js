@@ -12,7 +12,7 @@ require('dotenv').config()
 
 const connectionString = MONGODBURI
 mongoose.connect(
-    "mongodb+srv://admin:mongo@cluster0.se5qhkr.mongodb.net/?retryWrites=true&w=majority",
+    "mongodb+srv://admin:mongo@cluster0.se5qhkr.mongodb.net/test?retryWrites=true&w=majority",
     { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
