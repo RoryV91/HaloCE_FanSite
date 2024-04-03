@@ -1,4 +1,4 @@
-==================================
+
    Halo CE Fan Site | Nade Jump
 ==================================
 
@@ -20,13 +20,13 @@
 ⬜⬜⬜⬜⬛⬛🟩🟩🟩🟩⬛⬛⬜⬜⬜⬜\
 ⬜⬜⬜⬜⬜⬜⬛⬛⬛⬛⬜⬜⬜⬜⬜⬜\
 
-==========
+
   About:
 ==========
 
 This is a full-stack, CRUD website using RESTful methods. It is a fan-site for the outdated PC game Halo CE, focusing on the items in the game. Users can create, read, update, and delete reviews on a list of all of the in-game items. I will add more to this in the future to be a more encompassing reseource later on.
 
-====================
+
   Acknowledgements
 ====================
 
@@ -35,19 +35,18 @@ Thanks to halopedia.com for informational content regarding items.
 Thanks to instructional team at GA for debugging help!
 Thanks to Microsoft, Gearbox, and Bungie for creating an amazing game 20+ years ago!
 
-====================
+
   Technology used
 ====================
 
 This API is made using MongoDB/Mongoose, Express, Node.js, and bcrypt.
 
-============
+
   Approach
 ============
 
 This is a basic CRUD API that utilizes the Models, Views, Controllers or MVC file structure. It uses three models: items, reviews, and users, only reviews is full-CRUD at this time. Reviews is embedded in items and users is independent of both, meaning this only uses two collections for its database. I utilized bcrypt to store passwords for the users model as hashes rather than plain-text. I built this with a variety of screen sizes in mind, so I utilized flexbox for ability to scale down. 
 
-=====================
   Unsolved Problems
 =====================
 
@@ -64,7 +63,7 @@ Things I wanted to do that I couldnt accomplish on time are:
 -have a page to show each individual item
 -have a page for each user with their reviews
 
-================
+
   User Stories
 ================
 
@@ -74,7 +73,6 @@ Things I wanted to do that I couldnt accomplish on time are:
 
     "As a software engineer, I can see this app, while simple, is an example of a CRUD app using RESTful routes. I can see the author understands how to implement those."
 
-==============
   Wireframes
 ==============
 
@@ -83,7 +81,6 @@ Things I wanted to do that I couldnt accomplish on time are:
 ![showItem](https://user-images.githubusercontent.com/115426977/204744973-ce295589-ce62-46ba-8f7c-f05146f99c70.png)
 ![addReview](https://user-images.githubusercontent.com/115426977/204744958-9e2eef0f-e380-4cf1-ba2a-c1b55999552d.png)
 
-============================
   Link to finished product
 ============================
 
