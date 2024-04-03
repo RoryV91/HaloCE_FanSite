@@ -1,8 +1,6 @@
 ==================================
    Halo CE Fan Site | Nade Jump
 ==================================
-(On Github, view README in source blob for optimal effect)
-
 
 ⬜⬜⬜⬜⬜⬛⬛⬛⬛⬛⬛⬜⬜⬜⬜⬜\
 ⬜⬜⬜⬛⬛🟩🟩🟩🟩🟩🟩⬛⬛⬜⬜⬜\
